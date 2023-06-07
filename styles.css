@@ -1,0 +1,184 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.label {
+  display: block;
+  z-index: 1;
+}
+
+#photoContainer {
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  z-index: 2;
+}
+
+#photoContainer img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: 2;
+}
+#otherinput1{
+  position: relative;
+  left: 50%;
+  transform: translateY(5%);
+  transform: translateX(-50%);
+  text-align: center;
+}
+.Vmark{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+  top: 0px;
+  left: 0px;
+}
+
+.text{
+  text-align: center;
+}
+
+
+#text1{
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.text-overlay{
+
+  position: absolute;
+  border-style: none;
+  text-align: right;
+  vertical-align: 50%;
+  font-size: 15px;
+  font-weight: 100;
+  overflow-y: auto; /* or "scroll" */
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgb(0, 0, 0);
+  overflow-wrap: normal;
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+#textOverlay1{
+  position: absolute;
+  color: white;
+  text-align: center;
+
+  top: 150px;
+  left: 85px;
+  right: 50px;
+  width: 112px;
+  height: 32px;
+}
+#textOverlay2{
+  position: absolute;
+  color: rgb(0, 0, 0);
+
+  top: 185px;
+  left: 275px;
+  right: 50px;
+  width: 145px;
+  height: 20px;
+}
+#textOverlay3{
+  position: absolute;
+  color: rgb(0, 0, 0);
+
+  top: 185px;
+  left: 93px;
+  right: 50px;
+  width: 100px;
+  height: 18px;
+}
+#textOverlay4{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 408px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+
+#textOverlay5{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 300px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay6{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 192px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay7{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 84px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay8{
+
+  top: 270px;
+  left: 425px;
+  width: 88px;
+  height: 40px;
+}
+#textOverlay9{
+
+  top: 270px;
+  left: 345px;
+  width: 80px;
+  height: 40px;
+}
+#textOverlay10{
+
+  top: 270px;
+  left: 225px;
+  width: 118px;
+  height: 40px;
+}
+#textOverlay11{
+
+  top: 270px;
+  left: 190px;
+  width: 33px;
+  height: 40px;
+}
+#textOverlay12{
+
+  top: 270px;
+  left: 117px;
+  width: 72px;
+  height: 40px;
+}
+#textOverlay13{
+
+  top: 270px;
+  left: 85px;
+  width: 30px;
+  height: 40px;
+}

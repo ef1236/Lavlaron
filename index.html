@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Text Placement on Photo</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        window.onload = function() {
+            for (var i = 1 ; i<=13 ; i++){
+            updateText(i)
+            }
+        };
+      </script>
+</head>
+<body>
+    <div class="container">
+        <label for="text1">איזו פעילות</label>
+
+        <select id="text1" class = "text" onchange="handleSelectChange(1)"  oninput="updateText(1,false)">
+            <option value="">בחר פעילות מתאימה</option>
+
+            <option value="מחנה קיץ">מחנה קיץ</option>
+            <option value="קורס">קורס</option>
+            <option value="טיול שבטי">טיול שבטי</option>
+            <option value="טיול הנהגתי">טיול הנהגתי</option>
+            <option value="יום שבט">יום שבט</option>
+            <option value="פעילות ימית">פעילות ימית</option>
+
+            <option value="אחר">אחר (כתוב למטה)</option>
+        </select>
+
+        <input type="text" id="otherinput1" style="display: none;" oninput="updateText(1,true)">
+
+        <div class="box">
+            <label for="text2">מקום הפעילות</label>
+            <input type="text" value="תל אביב - יפו"  id="text2"class = "text"  oninput="updateText(2, false)">
+        </div>
+
+        <div class="box">
+            <label for="text3">סוג פעילות</label>
+            <input type="text" value=""  id="text3" class = "text" oninput="updateText(3, false)">
+        </div>
+
+        <div class="box">
+            <label for="text4">הנהגה</label>
+            <input type="text" value="תל אביב - יפו"  id="text4" class = "text" oninput="updateText(4, false)">
+        </div>
+
+        <div class="box">
+            <label for="text5">?שבט</label>
+            <input type="text" value="צופי ים תל אביב"  id="text5" class = "text" oninput="updateText(5, false)">
+        </div>
+
+        <div class="box">
+            <label for="text6">מתאריך</label>
+            <!--<input type="text" value=""  id="text6" class = "text" oninput="updateText(6, false)"> -->
+            <input type="date" name="begin" id="text6" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(6, false)">
+
+        
+        </div>
+
+        <div class="box">
+            <label for="text7">עד תאריך</label>
+            <!--<input type="text" value=""  id="text7" class = "text" oninput="updateText(7, false)">-->
+            <input type="date" name="begin" id="text7" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(7, false)">
+        </div>
+
+        <div class="box">
+            <label for="text8">שם משפחה</label>
+            <input type="text" value=""  id="text8" class = "text" oninput="updateText(8, false)">
+        </div>
+
+        <div class="box">
+            <label for="text9">שם פרטי</label>
+            <input type="text" value=""  id="text9" class = "text" oninput="updateText(9, false)">
+        </div>
+        
+        <div class="box">
+            <label for="text10">מס' תעודת זהות</label>
+            <input type="text" value=""  id="text10" class = "text" oninput="updateText(10, false)">
+        </div>
+
+        <div class="box">
+            <label for="text11">מגדר</label>
+            <input type="text" value=""  id="text11" class = "text" oninput="updateText(11, false)">
+        </div>
+
+        <div class="box">
+            <label for="text12">תאריך לידה</label>
+            <input type="date" name="begin" id="text12" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(12, false)">
+        </div>
+
+        <div class="box">
+            <label for="text13">כיתה</label>
+            <input type="text" value=""  id="text13" class = "text" oninput="updateText(13, false)">
+        </div>
+
+        
+        
+
+        <div id="photoContainer">
+            <img src="Lavlaron.jpg" alt="Photo" >
+
+            <div id="textOverlay1" class="text-overlay"></div>
+            <div id="textOverlay2" class="text-overlay"></div>
+            <div id="textOverlay3" class="text-overlay"></div>
+            <div id="textOverlay4" class="text-overlay"></div>
+            <div id="textOverlay5" class="text-overlay"></div>
+            <div id="textOverlay6" class="text-overlay"></div>
+            <div id="textOverlay7" class="text-overlay"></div>
+            <div id="textOverlay8" class="text-overlay"></div>
+            <div id="textOverlay9" class="text-overlay"></div>
+            <div id="textOverlay10" class="text-overlay"></div>
+            <div id="textOverlay11" class="text-overlay"></div>
+            <div id="textOverlay12" class="text-overlay"></div>
+            <div id="textOverlay13" class="text-overlay"></div>
+
+            <div id="Vmark1" class="Vmark" >&#10003; </div>
+
+        </div>
+        <button onclick="captureScreenshot()">Capture Screenshot</button>
+  
+
+
+    
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
