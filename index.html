@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         window.onload = function() {
-            for (var i = 1 ; i<=13 ; i++){
+            for (var i = 1 ; i<=14 ; i++){
             updateText(i)
             }
         };
@@ -14,26 +14,29 @@
 </head>
 <body>
     <div class="container">
-        <label for="text1">איזו פעילות</label>
 
-        <select id="text1" class = "text" onchange="handleSelectChange(1)"  oninput="updateText(1,false)">
-            <option value="">בחר פעילות מתאימה</option>
+        <div class="box">
+            <label for="text1">איזו פעילות</label>
 
-            <option value="מחנה קיץ">מחנה קיץ</option>
-            <option value="קורס">קורס</option>
-            <option value="טיול שבטי">טיול שבטי</option>
-            <option value="טיול הנהגתי">טיול הנהגתי</option>
-            <option value="יום שבט">יום שבט</option>
-            <option value="פעילות ימית">פעילות ימית</option>
+            <select id="text1" class = "text" onchange="handleSelectChange(1)"  oninput="updateText(1,false)">
+                <option value="">בחר פעילות מתאימה</option>
 
-            <option value="אחר">אחר (כתוב למטה)</option>
-        </select>
+                <option value="מחנה קיץ">מחנה קיץ</option>
+                <option value="קורס">קורס</option>
+                <option value="טיול שבטי">טיול שבטי</option>
+                <option value="טיול הנהגתי">טיול הנהגתי</option>
+                <option value="יום שבט">יום שבט</option>
+                <option value="פעילות ימית">פעילות ימית</option>
 
-        <input type="text" id="otherinput1" style="display: none;" oninput="updateText(1,true)">
+                <option value="אחר">אחר (כתוב למטה)</option>
+            </select>
+        </div>
+
+        <input type="text" class="text" id="otherinput1" style="display: none;" oninput="updateText(1,true)">
 
         <div class="box">
             <label for="text2">מקום הפעילות</label>
-            <input type="text" value="תל אביב - יפו"  id="text2"class = "text"  oninput="updateText(2, false)">
+            <input type="text" value="תל אביב - יפו"  id="text2" class = "text"  oninput="updateText(2, false)">
         </div>
 
         <div class="box">
@@ -98,7 +101,21 @@
             <input type="text" value=""  id="text13" class = "text" oninput="updateText(13, false)">
         </div>
 
-        
+        <div class="box">
+            <label for="text14">:אני מצהיר בזאת כי</label>
+            
+            <select id="text14" class = "text" onchange="handleSelectChange(14)"  ">
+               
+                <option value=""></option>
+                <option value="לא">לא ידוע לי על מגבלות בריאותיות המונעות מבני/בתי להשתתף בפעילות הנערכת בתנועת הצופים </option>
+
+                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן: </option>
+  
+            </select>
+        </div>
+
+        <input type="text" class="text" placeholder="תיאור המגבלה" id="otherinput14" style="display: none;" oninput="updateText(14,true)">
+
         
 
         <div id="photoContainer">
@@ -118,7 +135,12 @@
             <div id="textOverlay12" class="text-overlay"></div>
             <div id="textOverlay13" class="text-overlay"></div>
 
+            <div id="textOverlay14" class="text-overlay"></div>
+
+
             <div id="Vmark1" class="Vmark" >&#10003; </div>
+            <div id="Vmark14" class="Vmark" >&#10003; </div>
+
 
         </div>
         <button onclick="captureScreenshot()">Capture Screenshot</button>

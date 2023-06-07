@@ -2,16 +2,26 @@
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .box {
+ display: grid;
+  grid-template-rows: auto 1fr; 
+
+  width: 200px;
   position: relative;
   text-align: center;
   z-index: 1;
+  
 }
 
 .label {
-  display: block;
+  grid-row: 1;
   z-index: 1;
 }
 
@@ -30,11 +40,15 @@
 }
 #otherinput1{
   position: relative;
-  left: 50%;
-  transform: translateY(5%);
-  transform: translateX(-50%);
+
   text-align: center;
 }
+#otherinput14{
+  position: relative;
+
+  text-align: center;
+}
+
 .Vmark{
   position: absolute;
   color: rgb(255, 255, 255);
@@ -46,8 +60,22 @@
 
 .text{
   text-align: center;
+  overflow-y: auto; /* or "scroll" */
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgb(0, 0, 0);
+  overflow-wrap: normal;
 }
+#text14 {
+  overflow-y: auto; /* Add a scrollbar if the content exceeds the maximum height */
+  width: 200px;
+  text-align: center; /* Center the options horizontally */
 
+}
+#text14 option {
+  overflow-wrap: break-word; /* Wrap long text onto multiple lines */
+  align-items: center;
+}
 
 #text1{
   text-align: center;
@@ -55,9 +83,9 @@
 }
 
 .text-overlay{
-
+  color: black;
   position: absolute;
-  border-style: none;
+  border-style: solid;
   text-align: right;
   vertical-align: 50%;
   font-size: 15px;
@@ -181,4 +209,10 @@
   left: 85px;
   width: 30px;
   height: 40px;
+}
+#textOverlay14{
+  top: 405px;
+  left: 89px;
+  width: 420px;
+  height: 35px;
 }
