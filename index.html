@@ -6,8 +6,20 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         window.onload = function() {
+
+            // Get the current date
+            var today = new Date();
+            
+            // Format the date as "yyyy-mm-dd"
+            var formattedDate = today.toISOString().split('T')[0];
+            
+            // Set the value of the input element to today's date
+            document.getElementById("text18").value = formattedDate;
+
+
             handleSelectChange(14)
-            for (var i = 1 ; i<=14 ; i++){
+            for (var i = 1 ; i<=18 ; i++){
+                console.log(i)
             updateText(i)
             }
         };
@@ -107,17 +119,59 @@
             
             <select id="text14" class = "text" onchange="handleSelectChange(14)"  oninput="updateText(14, false)">
                
-                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן </option>
                 <option value=""></option>
                 <option value="לא">לא ידוע לי על מגבלות בריאותיות המונעות מבני/בתי להשתתף בפעילות הנערכת בתנועת הצופים </option>
+                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן </option>
 
   
             </select>
         </div>
+        <div style="display: none;" id="otherinput14">מלא את הקוביות המוקפות בשחור המתאימות בהתאם למוגבלות למטה בתמונה עצמה</div>
+        <br>
 
-        <div style="display: none;" id="otherinput140">אם יש צורך מלא את קוביות הבאות</div>
+
+        <label>
+             אני מאשר לבני להשתתף בפעילות ימית כגון בריכה\ים <input type="checkbox" name="option" id="text15" oninput="updateText(15, false)"> 
+        </label>
+        <label>
+            בני\בתי יודע\ת לשחות<input type="checkbox" name="option" id="text16" oninput="updateText(16, false)">
+        </label>
+        <label>
+            אני מאשר\ת לבני\בתי להשתתף בםעילות של רחצת לילה<input type="checkbox" name="option" id="text17" oninput="updateText(17, false)">
+        </label>
+          
+        <div class="box">
+            <label for="text18">תאריך מילוי האישור</label>
+            <input type="date" name="begin" id="text18" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(18, false)">
+        </div>
+
+        <div class="box">
+            <label for="text19">שם ההורה</label>
+            <input type="text" value=""  id="text19" class = "text" oninput="updateText(19, false)">
+        </div>
+
+        <div class="box">
+            <label for="text20">מספר ת.ז של ההורה</label>
+            <input type="text" value=""  id="text20" class = "text" oninput="updateText(20, false)">
+        </div>
+
+        <div class="box">
+            <label for="text21">טלפון נייד</label>
+            <input type="text" value=""  id="text21" class = "text" oninput="updateText(21, false)">
+        </div>
+
+        <div class="box">
+            <label for="text22">חתימת ההורה</label>
+
+            <canvas id="text22" class="text" width="200" height="100" style="border: 1px solid #000;"></canvas>
 
 
+            <button onclick="clearSignature();">נקה חתימה</button>
+            <input type="hidden" id="signatureInput" name="signature">
+
+                
+        </div>
 
         <div id="photoContainer">
             <img src="Lavlaron.jpg" alt="Photo" >
@@ -136,23 +190,31 @@
             <div id="textOverlay12" class="text-overlay"></div>
             <div id="textOverlay13" class="text-overlay"></div>
 
+            <div id="textOverlay18" class="text-overlay"></div>
+            <div id="textOverlay19" class="text-overlay"></div>
+            <div id="textOverlay20" class="text-overlay"></div>
+            <div id="textOverlay21" class="text-overlay"></div>
+
+            <div id="textOverlay22" class="text-overlay"></div>
+
+
            <!-- <div id="textOverlay14" class="text-overlay"></div> -->
 
-            <div > 
-                <input type="text" id = "inputOverlay1" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay2" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay3" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay4" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay5" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay6" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay7" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay8" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay9" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay10" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay11" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
-                <input type="text" id = "inputOverlay12" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+            <div   id = "inputOverlayContainer"> 
+                <input type="text" id = "inputOverlay1" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay2" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay3" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay4" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay5" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay6" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay7" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay8" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay9" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay10" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay11" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay12" class="inputoverlay"  placeholder="">
                 
-
+                
 
             </div>
             
@@ -160,6 +222,10 @@
 
             <div id="Vmark1" class="Vmark" >&#10003; </div>
             <div id="Vmark14" class="Vmark" >&#10003; </div>
+
+            <div id="Vmark15" class="Vmark" >&#10003; </div>
+            <div id="Vmark16" class="Vmark" >&#10003; </div>
+            <div id="Vmark17" class="Vmark" >&#10003; </div>
 
 
         </div>
@@ -173,5 +239,71 @@
 
     <script src="script.js"></script>
     
+    <script>
+        var canvas = document.getElementById('text22');
+        var context = canvas.getContext('2d');
+        var isDrawing = false;
+      
+        // Mouse events
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', stopDrawing);
+        canvas.addEventListener('mouseleave', stopDrawing);
+      
+        // Touch events
+        canvas.addEventListener('touchstart', startDrawing);
+        canvas.addEventListener('touchmove', draw);
+        canvas.addEventListener('touchend', stopDrawing);
+      
+        function startDrawing(event) {
+          event.preventDefault();
+      
+          if (event.type === 'mousedown') {
+            isDrawing = true;
+          } else if (event.type === 'touchstart') {
+            isDrawing = true;
+            event = event.touches[0];
+          }
+      
+          draw(event);
+        }
+      
+        function draw(event) {
+          if (!isDrawing) return;
+          context.lineWidth = 2;
+          context.lineCap = 'round';
+          context.strokeStyle = '#000';
+      
+          var rect = canvas.getBoundingClientRect();
+          var x, y;
+      
+          if (event.type.includes('mouse')) {
+            x = event.clientX - rect.left;
+            y = event.clientY - rect.top;
+          } else if (event.type.includes('touch')) {
+            x = event.touches[0].clientX - rect.left;
+            y = event.touches[0].clientY - rect.top;
+          }
+      
+          context.lineTo(x, y);
+          context.stroke();
+          context.beginPath();
+          context.moveTo(x, y);
+      
+          // Store signature data in a hidden input field
+          document.getElementById('signatureInput').value = canvas.toDataURL();
+        }
+      
+        function stopDrawing() {
+          isDrawing = false;
+          takeScreenshot()
+          context.beginPath();
+        }
+      
+        function clearSignature() {
+          context.clearRect(0, 0, canvas.width, canvas.height);
+          document.getElementById('signatureInput').value = '';
+        }
+      </script>
 </body>
 </html>

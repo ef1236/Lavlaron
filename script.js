@@ -47,15 +47,18 @@ function updateText(boxNumber,otherInput=false) {
         vmark.style.color = "black";
         break;
       default:
-        vmark.style.top = "0x";
+        vmark.style.top = "0px";
         vmark.style.left = "0px";
         vmark.style.color = "white";
         textbox.style.color = "black";
         break; 
     }
+    var textOverlay = document.getElementById('textOverlay' + boxNumber);
+   textOverlay.innerText = text;
+    //positionTextOverlay();
   }
 
-  if(boxNumber==14)
+  else if(boxNumber==14)
   {
     vmark = document.getElementById("Vmark14")
     switch(text)
@@ -76,16 +79,63 @@ function updateText(boxNumber,otherInput=false) {
         vmark.style.color = "black"; 
         break;
 
-    }
-
+    } 
+    //var textOverlay = document.getElementById('textOverlay' + boxNumber);
+    //textOverlay.innerText = text;
+    //positionTextOverlay();
   }
 
+  else if(boxNumber>=15 && boxNumber<=17){
+    var checkbox = document.getElementById("text"+boxNumber)
+    var vmark = document.getElementById("Vmark"+boxNumber)
+    
+    if(checkbox.checked)
+    {
+      vmark.style.color = "black"
+      switch(boxNumber)
+      {
+        case 15:
+          console.log("15 vmark"+vmark)
+          vmark.style.top = "619px";
+          vmark.style.left = "510px";
+          break;
+        case 16:
+          vmark.style.top = "646px";
+          vmark.style.left = "436px";
+          break;
+        case 17:
+          vmark.style.top = "670px";
+          vmark.style.left = "466px";
+          break;
+      }
 
+    }
+    else
+    {
+      vmark.style.color = "black"
+      switch(boxNumber)
+      {
+        case 15:
+          vmark.style.color = "white"
+          break;
+        case 16:
+          vmark.style.top = "646px";
+          vmark.style.left = "381px";
+          break;
+        case 17:
+          vmark.style.top = "670px";
+          vmark.style.left = "399px";
+          break;
+      }
+    }
+  }
 
+  else
+  {
     var textOverlay = document.getElementById('textOverlay' + boxNumber);
     textOverlay.innerText = text;
     //positionTextOverlay();
-
+  }
 
 }
 
@@ -99,7 +149,7 @@ if(false)
     var markerX = event.offsetX;
     var markerY = event.offsetY;
 
-    console.log('Marker position relative to container:', markerX, markerY);
+    console.log('Marker position relative to container:', markerY, markerX);
   });
 }
 
@@ -153,7 +203,11 @@ function handleSelectChange(boxNumber) {
 
 
     if (selectElement.value == "כן") {
+      var otherInput = document.getElementById("otherinput14")
+      otherInput.style.display = "block";
+
       for(i=1 ; i<=12 ; i++){
+
         var otherInput = document.getElementById("inputOverlay"+i);
 
         otherInput.style.display = "block";
@@ -162,6 +216,8 @@ function handleSelectChange(boxNumber) {
     }
 
     else {
+      var otherInput = document.getElementById("otherinput14")
+      otherInput.style.display = "none";
       for(i=1 ; i<=12 ; i++){
         var otherInput = document.getElementById("inputOverlay"+i);
 
@@ -170,4 +226,34 @@ function handleSelectChange(boxNumber) {
     }
     
   }
+}
+
+function takeScreenshot() {
+  // Get the source element
+  const sourceElement = document.getElementById('text22');
+  
+  // Create a canvas element
+  const canvas = document.createElement('canvas');
+  const context = canvas.getContext('2d');
+  
+  // Set the canvas size to match the source element
+  canvas.width = sourceElement.offsetWidth;
+  canvas.height = sourceElement.offsetHeight;
+  
+  // Draw the source element onto the canvas
+  context.drawImage(sourceElement, 0, 0);
+  
+  // Get the data URL of the canvas
+  const dataURL = canvas.toDataURL();
+  
+  // Create an image element for displaying the screenshot
+  const screenshotImage = document.createElement('img');
+  screenshotImage.src = dataURL;
+  
+  // Get the destination element
+  const destinationElement = document.getElementById('textOverlay22');
+  
+  // Clear the destination element and append the screenshot image
+  destinationElement.innerHTML = '';
+  destinationElement.appendChild(screenshotImage);
 }
