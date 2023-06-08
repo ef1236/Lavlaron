@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         window.onload = function() {
+            handleSelectChange(14)
             for (var i = 1 ; i<=14 ; i++){
             updateText(i)
             }
@@ -104,19 +105,19 @@
         <div class="box">
             <label for="text14">:אני מצהיר בזאת כי</label>
             
-            <select id="text14" class = "text" onchange="handleSelectChange(14)"  ">
+            <select id="text14" class = "text" onchange="handleSelectChange(14)"  oninput="updateText(14, false)">
                
+                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן </option>
                 <option value=""></option>
                 <option value="לא">לא ידוע לי על מגבלות בריאותיות המונעות מבני/בתי להשתתף בפעילות הנערכת בתנועת הצופים </option>
 
-                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן: </option>
   
             </select>
         </div>
 
-        <input type="text" class="text" placeholder="תיאור המגבלה" id="otherinput14" style="display: none;" oninput="updateText(14,true)">
+        <div style="display: none;" id="otherinput140">אם יש צורך מלא את קוביות הבאות</div>
 
-        
+
 
         <div id="photoContainer">
             <img src="Lavlaron.jpg" alt="Photo" >
@@ -135,7 +136,26 @@
             <div id="textOverlay12" class="text-overlay"></div>
             <div id="textOverlay13" class="text-overlay"></div>
 
-            <div id="textOverlay14" class="text-overlay"></div>
+           <!-- <div id="textOverlay14" class="text-overlay"></div> -->
+
+            <div > 
+                <input type="text" id = "inputOverlay1" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay2" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay3" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay4" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay5" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay6" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay7" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay8" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay9" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay10" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay11" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                <input type="text" id = "inputOverlay12" class="inputoverlay"  placeholder="hhhhhhhhhhhhhhhhh">
+                
+
+
+            </div>
+            
 
 
             <div id="Vmark1" class="Vmark" >&#10003; </div>

@@ -1,6 +1,7 @@
 
 
 function updateText(boxNumber,otherInput=false) {
+
   if(otherInput){    
     var text = document.getElementById('otherinput' + boxNumber).value;
 }
@@ -56,21 +57,24 @@ function updateText(boxNumber,otherInput=false) {
 
   if(boxNumber==14)
   {
-    textbox = document.getElementById("textOverlay14")
     vmark = document.getElementById("Vmark14")
     switch(text)
     {
-      case "לא":
-      vmark.style.top = "332px";
-      vmark.style.left = "508px";
-      vmark.style.color = "black"; 
-      break;
+      case "":
+        vmark.style.color = "white"; 
 
-      case "כן":
-      vmark.style.top = "347px";
-      vmark.style.left = "508px";
-      vmark.style.color = "black"; 
-      break;
+        break;
+      case "לא":
+        vmark.style.top = "332px";
+        vmark.style.left = "508px";
+        vmark.style.color = "black"; 
+        break;
+
+      default:
+        vmark.style.top = "347px";
+        vmark.style.left = "508px";
+        vmark.style.color = "black"; 
+        break;
 
     }
 
@@ -89,7 +93,7 @@ function updateText(boxNumber,otherInput=false) {
 
 
 
-if(true)
+if(false)
   {var container = document.getElementById('photoContainer');
   container.addEventListener('mousemove', function(event) {
     var markerX = event.offsetX;
@@ -146,12 +150,23 @@ function handleSelectChange(boxNumber) {
   }
   else if(boxNumber==14)
   {
-    var otherInput = document.getElementById("otherinput14");
+
 
     if (selectElement.value == "כן") {
-      otherInput.style.display = "block";
-    } else {
-      otherInput.style.display = "none";
+      for(i=1 ; i<=12 ; i++){
+        var otherInput = document.getElementById("inputOverlay"+i);
+
+        otherInput.style.display = "block";
+      }
+      
+    }
+
+    else {
+      for(i=1 ; i<=12 ; i++){
+        var otherInput = document.getElementById("inputOverlay"+i);
+
+        otherInput.style.display = "none ";
+      }
     }
     
   }
