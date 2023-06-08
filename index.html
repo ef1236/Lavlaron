@@ -19,7 +19,6 @@
 
             handleSelectChange(14)
             for (var i = 1 ; i<=18 ; i++){
-                console.log(i)
             updateText(i)
             }
         };
@@ -174,7 +173,7 @@
         </div>
 
         <div id="photoContainer">
-            <img src="Lavlaron.jpg" alt="Photo" >
+            <img src="Lavlaron.jpg" alt="Photo" onload="ImgLoaded()">
 
             <div id="textOverlay1" class="text-overlay"></div>
             <div id="textOverlay2" class="text-overlay"></div>
@@ -229,12 +228,12 @@
 
 
         </div>
-        <button onclick="captureScreenshot()">Capture Screenshot</button>
-  
-
+        <button onclick="captureScreenshot()">הורד תמונה של האישור</button>
 
     
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 
     <script src="script.js"></script>

@@ -174,7 +174,7 @@ function positionTextOverlay() {
 }
 function captureScreenshot() {
     setTimeout(function() {
-      html2canvas(document.body).then(function(canvas) {
+      html2canvas(document.body.photoContainer).then(function(canvas) {
         var screenshot = canvas.toDataURL("image/png");
         var link = document.createElement('a');
         link.href = screenshot;
@@ -230,7 +230,7 @@ function handleSelectChange(boxNumber) {
 
 function takeScreenshot() {
   // Get the source element
-  const sourceElement = document.getElementById('text22');
+  const sourceElement = document.getElementById('photoContainer');
   
   // Create a canvas element
   const canvas = document.createElement('canvas');
@@ -256,4 +256,28 @@ function takeScreenshot() {
   // Clear the destination element and append the screenshot image
   destinationElement.innerHTML = '';
   destinationElement.appendChild(screenshotImage);
+}
+function captureSection() {
+  // Get the section element to be captured
+  const sectionElement = document.getElementById('photoContainer');
+  
+  // Use html2canvas to capture the section element as an image
+  html2canvas(sectionElement)
+    .then(function(canvas) {
+      // Create a temporary link element
+      const link = document.createElement('a');
+      
+      // Set the href attribute to the data URL of the canvas
+      link.href = canvas.toDataURL();
+      
+      // Set the download attribute with the desired file name
+      link.download = 'screenshot.png';
+      
+      // Programmatically trigger the download
+      link.click();
+    });
+  }
+function ImgLoaded() {
+  var ImgLoaded = document.getElementById(ImgLoaded)
+  ImgLoaded.innerHTML = "Img Loaded!";
 }
