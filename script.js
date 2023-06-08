@@ -230,7 +230,7 @@ function handleSelectChange(boxNumber) {
 
 function takeScreenshot() {
   // Get the source element
-  const sourceElement = document.getElementById('photoContainer');
+  const sourceElement = document.getElementById('text22');
   
   // Create a canvas element
   const canvas = document.createElement('canvas');
