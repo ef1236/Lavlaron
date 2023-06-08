@@ -87,7 +87,7 @@
 .text-overlay{
   color: black;
   position: absolute;
-  border-style: solid;
+  border-style: none;
   text-align: right;
   vertical-align: 50%;
   font-size: 15px;
