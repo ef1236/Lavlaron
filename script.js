@@ -13,10 +13,12 @@ canvas.addEventListener('touchstart', startDrawing);
 canvas.addEventListener('touchmove', draw);
 canvas.addEventListener('touchend', stopDrawing);
 
-
-
-
-
+bools_array = []
+for(i = 1;i<=23;i++){
+  bools_array.push(false)
+}
+bools_array[0] = true
+bools_array[18] = true
 
 
 
@@ -24,6 +26,7 @@ canvas.addEventListener('touchend', stopDrawing);
 
 
 function startDrawing(event) {
+  updateText(22)
   event.preventDefault();
 
   if (event.type === 'mousedown') {
@@ -74,6 +77,9 @@ function stopDrawing() {
 }
 
 function clearSignature() {
+  bools_array[22] = false
+  missing = document.getElementById("missing22")
+  missing.style.display = "block"
   context.clearRect(0, 0, canvas.width, canvas.height);
   document.getElementById('signatureInput').value = '';
 }
@@ -83,9 +89,35 @@ function clearSignature() {
 
 
 
-function updateText(boxNumber,otherInput=false) {
+function updateText(boxNumber,otherInput=false, firsttime = false) {
+  
+  if(boxNumber!=18 && !firsttime){
+    
+    missing = document.getElementById("missing" + boxNumber)
+    missing.style.display = "none"
+  }
+  
+  if(!firsttime){
+    text = document.getElementById("text"+boxNumber).value
+    console.log(text)
+    if(text==""){
+      missing = document.getElementById("missing" + boxNumber)
+      missing.style.display = "block"
+      bools_array[boxNumber] = true
+    }
+    else
+      {bools_array[boxNumber] = true}
+
+    if(bools_array.every((element) => element===true)){
+      console.log(bools_array)
+      alldone = document.getElementById("missingdone")
+      alldone.style.display = "block"
+    }
+
+  }
 
   if(otherInput){    
+    console.log(boxNumber)
     var text = document.getElementById('otherinput' + boxNumber).value;
 }
   else{
@@ -178,7 +210,6 @@ function updateText(boxNumber,otherInput=false) {
       switch(boxNumber)
       {
         case 15:
-          console.log("15 vmark"+vmark)
           vmark.style.top = "619px";
           vmark.style.left = "510px";
           break;
@@ -212,7 +243,10 @@ function updateText(boxNumber,otherInput=false) {
       }
     }
   }
+  
+  else if(boxNumber==22){
 
+  }
   else
   {
     var textOverlay = document.getElementById('textOverlay' + boxNumber);

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Text Placement on Photo</title>
+    <title>מילוי אישור הורים</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         window.onload = function() {
@@ -30,8 +30,8 @@
 
 
             handleSelectChange(14)
-            for (var i = 1 ; i<=18 ; i++){
-            updateText(i)
+            for (var i = 1 ; i<=22 ; i++){
+            updateText(i,false, firsttime=true)
             }
         };
       </script>
@@ -43,7 +43,7 @@
 
 
         <div class="">
-            <div class="title" style="text-decoration: underline;" >!ברוכים הבאים לאתר למילוי אישור ההורים </div>
+            <div class="title" style="text-decoration: underline;" >ברוכים הבאים לאתר למילוי אישור ההורים </div>
             <div class="" style="text-align: right;">:על מנת להשתמש באתר</div>
 
             <div class="" style="text-align: right;">א.     מלאו את כל האזורים</div>
@@ -75,7 +75,7 @@
 
         <div class="box">
             <label for="text2">מקום הפעילות</label>
-            <input type="text" value="תל אביב - יפו"  id="text2" class = "text"  oninput="updateText(2, false)">
+            <input type="text" value=""  id="text2" class = "text"  oninput="updateText(2, false)">
         </div>
 
         <div class="box">
@@ -152,7 +152,7 @@
   
             </select>
         </div>
-        <div style="display: none;" id="otherinput14">מלא את הקוביות המוקפות בשחור המתאימות בהתאם למוגבלות למטה בתמונה עצמה</div>
+        <div style="display: none;" id="otherinput14">מלא את הקוביות המוקפות בשחור במידת הצורך בהתאם למוגבלות למטה בתמונה עצמה</div>
         <br>
 
 
@@ -163,7 +163,7 @@
             בני\בתי יודע\ת לשחות<input type="checkbox" name="option" id="text16" oninput="updateText(16, false)">
         </label>
         <label>
-            אני מאשר\ת לבני\בתי להשתתף בםעילות של רחצת לילה<input type="checkbox" name="option" id="text17" oninput="updateText(17, false)">
+            אני מאשר\ת לבני\בתי להשתתף בפעילות של רחצת לילה<input type="checkbox" name="option" id="text17" oninput="updateText(17, false)">
         </label>
           
         <div class="box">
@@ -199,6 +199,38 @@
                 
         </div>
 
+        <br>
+        <div class="">
+            <div id="missing0" style="text-align: right; font-size: large;"><u><b>:פרטים חסרים</b></u></div>
+            <div id="missing1" style="text-align: right;">איזו פעילות-</div>
+            <div id="missing2" style="text-align: right;">מקום הפעילות-</div>
+            <div id="missing3" style="text-align: right;">סוג הפעילות-</div>
+            <div id="missing4" style="text-align: right;">הנהגה-</div>
+            <div id="missing5" style="text-align: right;">שבט-</div>
+            <div id="missing6" style="text-align: right;">מתאריך-</div>
+            <div id="missing7" style="text-align: right;">עד תאריך-</div>
+            <div id="missing8" style="text-align: right;">שם משפחה-</div>
+            <div id="missing9" style="text-align: right;">שם פרטי-</div>
+            <div id="missing10" style="text-align: right;">מס' תעודת זהות-</div>
+            <div id="missing11" style="text-align: right;">מגדר-</div>
+            <div id="missing12" style="text-align: right;">תאריך לידה-</div>
+            <div id="missing13" style="text-align: right;">כיתה-</div>
+            <div id="missing14" style="text-align: right;">אני מצהיר בזאת כי-</div>
+            <div id="missing15" style="text-align: right;">אני מאשר לבני להשתתף בפעילות ימית כגון בריכה\ים- </div>
+            <div id="missing16" style="text-align: right;">בני\בתי יודע\ת לשחות-</div>
+            <div id="missing17" style="text-align: right;">אני מאשר\ת לבני\בתי להשתתף בפעילות של רחצת לילה-</div>
+           <!-- <div id="missing18" style="text-align: right; display: none;">תאריך מילוי האישור<div> -->
+            <div id="missing19" style="text-align: right;">שם ההורה-</div>
+            <div id="missing20" style="text-align: right;">מספר ת.ז של ההורה-</div>
+            <div id="missing21" style="text-align: right;">טלפון נייד-</div>
+            <div id="missing22" style="text-align: right;">חתימת ההורה-</div>
+            <div id="missingdone" style="text-align: right; display: none;">  אין פרטים חסרים! נא לרדת למטה ולקחת צילום מסך של האישור- </div>
+
+
+
+        </div>
+        <br>
+        <br>
         <div id="photoContainer">
             <img src="Lavlaron.jpg" alt="Photo">
 
