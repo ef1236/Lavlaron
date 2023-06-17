@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>מילוי אישור הורים</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script>
+        window.onload = function() {
+
+            // set width of screen to that of page
+/*
+            var container = document.querySelector('.container');
+            var screenWidth = window.innerWidth;
+            var containerWidth = container.offsetWidth;
+            var zoomLevel = screenWidth / containerWidth;
+            document.body.style.zoom = zoomLevel;
+*/
+
+
+
+
+            // Get the current date
+            var today = new Date();
+            
+            // Format the date as "yyyy-mm-dd"
+            var formattedDate = today.toISOString().split('T')[0];
+            
+            // Set the value of the input element to today's date
+            document.getElementById("text18").value = formattedDate;
+
+
+            handleSelectChange(14)
+            for (var i = 1 ; i<=18 ; i++){
+            updateText(i)
+            }
+        };
+      </script>
+</head>
+<body>
+    <div class="container">
+
+        <br>
+
+
+        <div class="">
+            <div class="title" style="text-decoration: underline;" >ברוכים הבאים לאתר למילוי אישור ההורים </div>
+            <div class="" style="text-align: right;">:על מנת להשתמש באתר</div>
+
+            <div class="" style="text-align: right;">א.     מלאו את כל האזורים</div>
+            <div class="" style="text-align: right;">ב.     גללו מטה ומקמו את האישור במרכז המסך ותעשו צילום מסך</div>
+            <div class="" style="text-align: right;">ג.     שלחו את צילום המסך למדריך</div>
+
+        </div>
+        <br>
+
+
+        <div class="box">
+            <label for="text1">איזו פעילות</label>
+
+            <select id="text1" class = "text" onchange="handleSelectChange(1)"  oninput="updateText(1,false)">
+                <option value="">בחר פעילות מתאימה</option>
+
+                <option value="מחנה קיץ">מחנה קיץ</option>
+                <option value="קורס">קורס</option>
+                <option value="טיול שבטי">טיול שבטי</option>
+                <option value="טיול הנהגתי">טיול הנהגתי</option>
+                <option value="יום שבט">יום שבט</option>
+                <option value="פעילות ימית">פעילות ימית</option>
+
+                <option value="אחר">אחר (כתוב למטה)</option>
+            </select>
+        </div>
+
+        <input type="text" class="text" id="otherinput1" style="display: none;" oninput="updateText(1,true)">
+
+        <div class="box">
+            <label for="text2">מקום הפעילות</label>
+            <input type="text" value=""  id="text2" class = "text"  oninput="updateText(2, false)">
+        </div>
+
+        <div class="box">
+            <label for="text3">סוג פעילות</label>
+            <input type="text" value=""  id="text3" class = "text" oninput="updateText(3, false)">
+        </div>
+
+        <div class="box">
+            <label for="text4">הנהגה</label>
+            <input type="text" value="תל אביב - יפו"  id="text4" class = "text" oninput="updateText(4, false)">
+        </div>
+
+        <div class="box">
+            <label for="text5">?שבט</label>
+            <input type="text" value="צופי ים תל אביב"  id="text5" class = "text" oninput="updateText(5, false)">
+        </div>
+
+        <div class="box">
+            <label for="text6">מתאריך</label>
+            <!--<input type="text" value=""  id="text6" class = "text" oninput="updateText(6, false)"> -->
+            <input type="date" name="begin" id="text6" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(6, false)">
+
+        
+        </div>
+
+        <div class="box">
+            <label for="text7">עד תאריך</label>
+            <!--<input type="text" value=""  id="text7" class = "text" oninput="updateText(7, false)">-->
+            <input type="date" name="begin" id="text7" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(7, false)">
+        </div>
+
+        <div class="box">
+            <label for="text8">שם משפחה</label>
+            <input type="text" value=""  id="text8" class = "text" oninput="updateText(8, false)">
+        </div>
+
+        <div class="box">
+            <label for="text9">שם פרטי</label>
+            <input type="text" value=""  id="text9" class = "text" oninput="updateText(9, false)">
+        </div>
+        
+        <div class="box">
+            <label for="text10">מס' תעודת זהות</label>
+            <input type="text" value=""  id="text10" class = "text" oninput="updateText(10, false)">
+        </div>
+
+        <div class="box">
+            <label for="text11">מגדר</label>
+            <input type="text" value=""  id="text11" class = "text" oninput="updateText(11, false)">
+        </div>
+
+        <div class="box">
+            <label for="text12">תאריך לידה</label>
+            <input type="date" name="begin" id="text12" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(12, false)">
+        </div>
+
+        <div class="box">
+            <label for="text13">כיתה</label>
+            <input type="text" value=""  id="text13" class = "text" oninput="updateText(13, false)">
+        </div>
+
+        <div class="box">
+            <label for="text14">:אני מצהיר בזאת כי</label>
+            
+            <select id="text14" class = "text" onchange="handleSelectChange(14)"  oninput="updateText(14, false)">
+               
+                <option value=""></option>
+                <option value="לא">לא ידוע לי על מגבלות בריאותיות המונעות מבני/בתי להשתתף בפעילות הנערכת בתנועת הצופים </option>
+                <option value="כן">יש לבני / בתי מגבלות בריאותיות המונעות השתתפות מלאה / חלקית בפעילות הנדרשת כדלקמן </option>
+
+  
+            </select>
+        </div>
+        <div style="display: none;" id="otherinput14">מלא את הקוביות המוקפות בשחור המתאימות בהתאם למוגבלות למטה בתמונה עצמה</div>
+        <br>
+
+
+        <label>
+             אני מאשר לבני להשתתף בפעילות ימית כגון בריכה\ים <input type="checkbox" name="option" id="text15" oninput="updateText(15, false)"> 
+        </label>
+        <label>
+            בני\בתי יודע\ת לשחות<input type="checkbox" name="option" id="text16" oninput="updateText(16, false)">
+        </label>
+        <label>
+            אני מאשר\ת לבני\בתי להשתתף בפעילות של רחצת לילה<input type="checkbox" name="option" id="text17" oninput="updateText(17, false)">
+        </label>
+          
+        <div class="box">
+            <label for="text18">תאריך מילוי האישור</label>
+            <input type="date" name="begin" id="text18" placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31" 
+            oninput="updateText(18, false)">
+        </div>
+
+        <div class="box">
+            <label for="text19">שם ההורה</label>
+            <input type="text" value=""  id="text19" class = "text" oninput="updateText(19, false)">
+        </div>
+
+        <div class="box">
+            <label for="text20">מספר ת.ז של ההורה</label>
+            <input type="text" value=""  id="text20" class = "text" oninput="updateText(20, false)">
+        </div>
+
+        <div class="box">
+            <label for="text21">טלפון נייד</label>
+            <input type="text" value=""  id="text21" class = "text" oninput="updateText(21, false)">
+        </div>
+
+        <div class="box">
+            <label for="text22">חתימת ההורה</label>
+
+            <canvas id="text22" class="text" width="200" height="100" style="border: 1px solid #000;"></canvas>
+
+
+            <button onclick="clearSignature();">נקה חתימה</button>
+            <input type="hidden" id="signatureInput" name="signature">
+
+                
+        </div>
+
+        <br>
+        <div class="">
+            <div id="missing0" style="text-align: right; "><b>:פרטים חסרים</b></div>
+            <div id="missing1" style="text-align: right;">איזו פעילות</div>
+            <div id="missing2" style="text-align: right;">מקום הפעילות</div>
+            <div id="missing3" style="text-align: right;">סוג הפעילות</div>
+            <div id="missing4" style="text-align: right;">הנהגה</div>
+            <div id="missing5" style="text-align: right;">שבט</div>
+            <div id="missing6" style="text-align: right;">מתאריך</div>
+            <div id="missing7" style="text-align: right;">עד תאריך</div>
+            <div id="missing8" style="text-align: right;">שם משפחה</div>
+            <div id="missing9" style="text-align: right;">שם פרטי</div>
+            <div id="missing10" style="text-align: right;">מס' תעודת זהות</div>
+            <div id="missing11" style="text-align: right;">מגדר</div>
+            <div id="missing12" style="text-align: right;">תאריך לידה</div>
+            <div id="missing13" style="text-align: right;">כיתה</div>
+            <div id="missing14" style="text-align: right;">אני מצהיר בזאת כי</div>
+            <div id="missing15" style="text-align: right;">אני מאשר לבני להשתתף בפעילות ימית כגון בריכה\ים </div>
+            <div id="missing16" style="text-align: right;">בני\בתי יודע\ת לשחות</div>
+            <div id="missing17" style="text-align: right;">אני מאשר\ת לבני\בתי להשתתף בפעילות של רחצת לילה</div>
+            <div id="missing18" style="text-align: right;">תאריך מילוי האישור<div>
+            <div id="missing19" style="text-align: right;">שם ההורה</div>
+            <div id="missing20" style="text-align: right;">מספר ת.ז של ההורה</div>
+            <div id="missing21" style="text-align: right;">טלפון נייד</div>
+            <div id="missing22" style="text-align: right;">חתימת ההורה</div>
+
+
+
+        </div>
+        <br>
+        <br>
+        <div id="photoContainer">
+            <img src="Lavlaron.jpg" alt="Photo">
+
+            <div id="textOverlay1" class="text-overlay"></div>
+            <div id="textOverlay2" class="text-overlay"></div>
+            <div id="textOverlay3" class="text-overlay"></div>
+            <div id="textOverlay4" class="text-overlay"></div>
+            <div id="textOverlay5" class="text-overlay"></div>
+            <div id="textOverlay6" class="text-overlay"></div>
+            <div id="textOverlay7" class="text-overlay"></div>
+            <div id="textOverlay8" class="text-overlay"></div>
+            <div id="textOverlay9" class="text-overlay"></div>
+            <div id="textOverlay10" class="text-overlay"></div>
+            <div id="textOverlay11" class="text-overlay"></div>
+            <div id="textOverlay12" class="text-overlay"></div>
+            <div id="textOverlay13" class="text-overlay"></div>
+
+            <div id="textOverlay18" class="text-overlay"></div>
+            <div id="textOverlay19" class="text-overlay"></div>
+            <div id="textOverlay20" class="text-overlay"></div>
+            <div id="textOverlay21" class="text-overlay"></div>
+
+            <div id="textOverlay22" class="text-overlay"></div>
+
+
+           <!-- <div id="textOverlay14" class="text-overlay"></div> -->
+
+            <div   id = "inputOverlayContainer"> 
+                <input type="text" id = "inputOverlay1" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay2" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay3" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay4" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay5" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay6" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay7" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay8" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay9" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay10" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay11" class="inputoverlay"  placeholder="">
+                <input type="text" id = "inputOverlay12" class="inputoverlay"  placeholder="">
+                
+                
+
+            </div>
+            
+
+
+            <div id="Vmark1" class="Vmark" >&#10003; </div>
+            <div id="Vmark14" class="Vmark" >&#10003; </div>
+
+            <div id="Vmark15" class="Vmark" >&#10003; </div>
+            <div id="Vmark16" class="Vmark" >&#10003; </div>
+            <div id="Vmark17" class="Vmark" >&#10003; </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+
+    <script src="script.js"></script>
+    
+    <script>
+
+      </script>
+</body>
+</html>
