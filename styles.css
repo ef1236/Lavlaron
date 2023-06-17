@@ -1,0 +1,375 @@
+.title{
+  width: 400px;
+  text-decoration: underline;
+}
+
+
+
+.container {
+  width: 100%; 
+
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box {
+ display: grid;
+  grid-template-rows: auto 1fr; 
+
+  width: 200px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  
+}
+
+.label {
+  grid-row: 1;
+  z-index: 1;
+}
+
+#photoContainer {
+  position: relative;
+  margin-top: 20px;
+  display: inline-block;
+  z-index: 2;
+}
+
+#photoContainer img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  z-index: 2;
+}
+#otherinput1{
+  position: relative;
+
+  text-align: center;
+}
+#otherinput14{
+  position: relative;
+
+  text-align: center;
+}
+
+.Vmark{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  font-size: larger;
+  font-weight: bold;
+  top: 0px;
+  left: 0px;
+}
+
+
+
+.text{
+  text-align: center;
+  overflow-y: auto; /* or "scroll" */
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgb(0, 0, 0);
+  overflow-wrap: normal;
+  
+  
+}
+#text14 {
+  overflow-y: auto; /* Add a scrollbar if the content exceeds the maximum height */
+  width: 200px;
+  text-align: center; /* Center the options horizontally */
+
+}
+#text14 option {
+  overflow-wrap: break-word; /* Wrap long text onto multiple lines */
+  align-items: center;
+}
+
+#text1{
+  text-align: center;
+  vertical-align: bottom;
+  background-color: red;
+}
+
+.text-overlay{
+  color: black;
+  position: absolute;
+  border-style: מםמק;
+  text-align: right;
+  vertical-align: 50%;
+  font-size: 15px;
+  font-weight: 100;
+  overflow-y: auto; /* or "scroll" */
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgb(0, 0, 0);
+  overflow-wrap: normal;
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+#textOverlay1{
+  position: absolute;
+  color: white;
+  text-align: center;
+
+  top: 150px;
+  left: 85px;
+  right: 50px;
+  width: 112px;
+  height: 32px;
+}
+#textOverlay2{
+  position: absolute;
+  color: rgb(0, 0, 0);
+
+  top: 185px;
+  left: 275px;
+  right: 50px;
+  width: 145px;
+  height: 20px;
+}
+#textOverlay3{
+  position: absolute;
+  color: rgb(0, 0, 0);
+
+  top: 185px;
+  left: 93px;
+  right: 50px;
+  width: 100px;
+  height: 18px;
+}
+#textOverlay4{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 408px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+
+#textOverlay5{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 300px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay6{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 192px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay7{
+  position: absolute;
+  color: rgb(0, 0, 0);
+  top: 210px;
+  left: 84px;
+  right: 50px;
+  width: 105px;
+  height: 40px;
+}
+#textOverlay8{
+
+  top: 270px;
+  left: 425px;
+  width: 88px;
+  height: 40px;
+}
+#textOverlay9{
+
+  top: 270px;
+  left: 345px;
+  width: 80px;
+  height: 40px;
+}
+#textOverlay10{
+
+  top: 270px;
+  left: 225px;
+  width: 118px;
+  height: 40px;
+}
+#textOverlay11{
+
+  top: 270px;
+  left: 190px;
+  width: 33px;
+  height: 40px;
+}
+#textOverlay12{
+
+  top: 270px;
+  left: 117px;
+  width: 72px;
+  height: 40px;
+}
+#textOverlay13{
+
+  top: 270px;
+  left: 85px;
+  width: 30px;
+  height: 40px;
+}
+#textOverlay14{
+  top: 405px;
+  left: 89px;
+  width: 420px;
+  height: 35px;
+}
+#textOverlay18{
+  top: 740px;
+  left: 430px;
+  width: 80px;
+  height: 30px;
+}
+#textOverlay19{
+  top: 720px;
+  left: 345px;
+  width: 80px;
+  height: 30px;
+}
+#textOverlay20{
+  top: 720px;
+  left: 257px;
+  width: 80px;
+  height: 30px;
+}
+#textOverlay21{
+  top: 720px;
+  left: 172px;
+  width: 80px;
+  height: 37px;
+  font-size: smaller;
+}
+#textOverlay22{
+  top: 720px;
+  left: 88px;
+  width: 80px;
+  height: 40px;
+  font-size: smaller;
+}
+
+#targetDiv{
+  top: 720px;
+  left: 112px;
+  width: 80px;
+  height: 40px;
+  font-size: smaller;
+}
+
+.inputoverlay{
+  box-sizing: border-box;
+  resize: vertical;
+
+  overflow-y: auto;
+  display: none;
+  position: absolute;
+  z-index: 0;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  text-align: right;
+}
+#inputOverlayContainer{
+  overflow-y: auto;
+  height: 000px;
+  width: 000px;
+}
+#inputOverlay1{
+  position: absolute;
+  top: 370px;
+  left: 374px;
+  width: 140px;
+  height: 20px;
+}
+#inputOverlay2{
+  position: absolute;
+  top: 370px;
+  left: 230px;
+  width: 140px;
+  height: 20px;
+}
+#inputOverlay3{
+  position: absolute;
+  top: 370px;
+  left: 87px;
+  width: 140px;
+  height: 20px;
+}
+#inputOverlay4{
+  position: absolute;
+  top: 410px;
+  left: 87px;
+  width: 428px;
+  height: 20px;
+}
+#inputOverlay5{
+  position: absolute;
+  top: 442px;
+  left: 255px;
+  width: 130px;
+  height: 20px;
+}
+#inputOverlay6{
+  position: absolute;
+  top: 442px;
+  left: 90px;
+  width: 110px;
+  height: 20px;
+}
+#inputOverlay7{
+  position: absolute;
+  top: 487px;
+  left: 260px;
+  width: 110px;
+  height: 20px;
+}
+#inputOverlay8{
+  position: absolute;
+  top: 487px;
+  left: 90px;
+  width: 110px;
+  height: 20px;
+}
+#inputOverlay9{
+  position: absolute;
+  top: 510px;
+  left: 90px;
+  width: 230px;
+  height: 20px;
+}
+#inputOverlay10{
+  position: absolute;
+  top: 542px;
+  left: 200px;
+  width: 100px;
+  height: 37px;
+}
+#inputOverlay11{
+  position: absolute;
+  top: 542px;
+  left: 85px;
+  width: 115px;
+  height: 37px;
+}
+#inputOverlay12{
+  position: absolute;
+  top: 602px;
+  left: 85px;
+  width: 410px;
+  height: 18px;
+}
