@@ -103,6 +103,8 @@ function updateText(boxNumber,otherInput=false, firsttime = false) {
     if(text==""){
       missing = document.getElementById("missing" + boxNumber)
       missing.style.display = "block"
+      alldone = document.getElementById("missingdone")
+      alldone.style.display = "none"
       bools_array[boxNumber] = true
     }
     else
