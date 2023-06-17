@@ -1,13 +1,6 @@
-.title{
-  width: 400px;
-  text-decoration: underline;
-}
-
 
 
 .container {
-  width: 100%; 
-
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
@@ -16,6 +9,8 @@
   justify-content: center;
   align-items: center;
 
+  transform-origin: top center;
+  transform: scale(2);
 }
 
 .box {
@@ -76,8 +71,6 @@
   word-break: break-word;
   color: rgb(0, 0, 0);
   overflow-wrap: normal;
-  
-  
 }
 #text14 {
   overflow-y: auto; /* Add a scrollbar if the content exceeds the maximum height */
@@ -93,7 +86,6 @@
 #text1{
   text-align: center;
   vertical-align: bottom;
-  background-color: red;
 }
 
 .text-overlay{
@@ -241,6 +233,7 @@
   left: 345px;
   width: 80px;
   height: 30px;
+  font-size: smaller;
 }
 #textOverlay20{
   top: 720px;
@@ -259,7 +252,7 @@
   top: 720px;
   left: 88px;
   width: 80px;
-  height: 40px;
+  height: 41px;
   font-size: smaller;
 }
 

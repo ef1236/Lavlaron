@@ -2,19 +2,21 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>אישור הורים צופים</title>
+    <title>Text Placement on Photo</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
         window.onload = function() {
-            // set width of screen to that of page
 
+            // set width of screen to that of page
+/*
             var container = document.querySelector('.container');
             var screenWidth = window.innerWidth;
             var containerWidth = container.offsetWidth;
             var zoomLevel = screenWidth / containerWidth;
             document.body.style.zoom = zoomLevel;
+*/
+
+
 
 
             // Get the current date
@@ -32,31 +34,25 @@
             updateText(i)
             }
         };
-    </script>
-    <style>
-      html, body {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      overflow: auto;
-    }
-    </style>
+      </script>
 </head>
 <body>
     <div class="container">
+
         <br>
 
 
         <div class="">
-            <div class="title" >!ברוכים הבאים לאתר למילוי אישור ההורים </div>
+            <div class="title" style="text-decoration: underline;" >!ברוכים הבאים לאתר למילוי אישור ההורים </div>
             <div class="" style="text-align: right;">:על מנת להשתמש באתר</div>
 
-            <div class="" style="text-align: right;">א.     מלאו את כל האזורים עד שאין אזור אדום</div>
+            <div class="" style="text-align: right;">א.     מלאו את כל האזורים</div>
             <div class="" style="text-align: right;">ב.     גללו מטה ומקמו את האישור במרכז המסך ותעשו צילום מסך</div>
             <div class="" style="text-align: right;">ג.     שלחו את צילום המסך למדריך</div>
 
         </div>
         <br>
+
 
         <div class="box">
             <label for="text1">איזו פעילות</label>
@@ -195,15 +191,13 @@
             <label for="text22">חתימת ההורה</label>
 
             <canvas id="text22" class="text" width="200" height="100" style="border: 1px solid #000;"></canvas>
+
+
             <button onclick="clearSignature();">נקה חתימה</button>
-            <input type="hidden" id="signatureInput" name="signature">   
-        </div>
+            <input type="hidden" id="signatureInput" name="signature">
 
-        <div class="box">
-            <button onclick="zoomToElement()">Zoom to Element</button>
-            <button onclick="resetZoom()">Reset Zoom</button>
+                
         </div>
-
 
         <div id="photoContainer">
             <img src="Lavlaron.jpg" alt="Photo">
@@ -260,11 +254,7 @@
             <div id="Vmark17" class="Vmark" >&#10003; </div>
 
 
-        </div>
-        <button onclick="captureScreenshot()">הורד תמונה של האישור</button>
 
-    
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
@@ -272,70 +262,7 @@
     <script src="script.js"></script>
     
     <script>
-        var canvas = document.getElementById('text22');
-        var context = canvas.getContext('2d');
-        var isDrawing = false;
-      
-        // Mouse events
-        canvas.addEventListener('mousedown', startDrawing);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseup', stopDrawing);
-        canvas.addEventListener('mouseleave', stopDrawing);
-      
-        // Touch events
-        canvas.addEventListener('touchstart', startDrawing);
-        canvas.addEventListener('touchmove', draw);
-        canvas.addEventListener('touchend', stopDrawing);
-      
-        function startDrawing(event) {
-          event.preventDefault();
-      
-          if (event.type === 'mousedown') {
-            isDrawing = true;
-          } else if (event.type === 'touchstart') {
-            isDrawing = true;
-            event = event.touches[0];
-          }
-      
-          draw(event);
-        }
-      
-        function draw(event) {
-          if (!isDrawing) return;
-          context.lineWidth = 2;
-          context.lineCap = 'round';
-          context.strokeStyle = '#000';
-      
-          var rect = canvas.getBoundingClientRect();
-          var x, y;
-      
-          if (event.type.includes('mouse')) {
-            x = event.clientX - rect.left;
-            y = event.clientY - rect.top;
-          } else if (event.type.includes('touch')) {
-            x = event.touches[0].clientX - rect.left;
-            y = event.touches[0].clientY - rect.top;
-          }
-      
-          context.lineTo(x, y);
-          context.stroke();
-          context.beginPath();
-          context.moveTo(x, y);
-      
-          // Store signature data in a hidden input field
-          document.getElementById('signatureInput').value = canvas.toDataURL();
-        }
-      
-        function stopDrawing() {
-          isDrawing = false;
-          takeScreenshot()
-          context.beginPath();
-        }
-      
-        function clearSignature() {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          document.getElementById('signatureInput').value = '';
-        }
+
       </script>
 </body>
 </html>

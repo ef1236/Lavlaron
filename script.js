@@ -1,3 +1,86 @@
+var canvas = document.getElementById('text22');
+var context = canvas.getContext('2d');
+var isDrawing = false;
+
+// Mouse events
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stopDrawing);
+canvas.addEventListener('mouseleave', stopDrawing);
+
+// Touch events
+canvas.addEventListener('touchstart', startDrawing);
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchend', stopDrawing);
+
+
+
+
+
+
+
+
+
+
+
+function startDrawing(event) {
+  event.preventDefault();
+
+  if (event.type === 'mousedown') {
+    isDrawing = true;
+  } else if (event.type === 'touchstart') {
+    isDrawing = true;
+    event = event.touches[0];
+  }
+
+  draw(event);
+}
+
+function draw(event) {
+  if (!isDrawing) return;
+  context.lineWidth = 2;
+  context.lineCap = 'round';
+  context.strokeStyle = '#000';
+    
+
+  var rect = canvas.getBoundingClientRect();
+
+  var x, y;
+
+
+  if (event.type.includes('mouse')) {
+    x = event.clientX - rect.left;
+    y = event.clientY - rect.top;
+  } else if (event.type.includes('touch')) {
+    x = event.touches[0].clientX - rect.left;
+    y = event.touches[0].clientY - rect.top;
+  }
+  x *=1/2
+  y*=1/2
+
+  context.lineTo(x, y);
+  context.stroke();
+  context.beginPath();
+  context.moveTo(x, y);
+
+  // Store signature data in a hidden input field
+  document.getElementById('signatureInput').value = canvas.toDataURL();
+}
+
+function stopDrawing() {
+  isDrawing = false;
+  takeScreenshot()
+  context.beginPath();
+}
+
+function clearSignature() {
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  document.getElementById('signatureInput').value = '';
+}
+
+
+
+
 
 
 function updateText(boxNumber,otherInput=false) {
@@ -277,23 +360,3 @@ function captureSection() {
       link.click();
     });
   }
-function ImgLoaded() {
-  var ImgLoaded = document.getElementById(ImgLoaded)
-  ImgLoaded.innerHTML = "Img Loaded!";
-}
-
-function zoomToElement() {
-  var container = document.querySelector('#photoContainer');
-  var containerRect = container.getBoundingClientRect();
-  var screenWidth = window.innerWidth;
-  var screenHeight = window.innerHeight;
-  var scaleX = screenWidth / containerRect.width;
-  var scaleY = screenHeight / containerRect.height;
-  var scale = Math.min(scaleX, scaleY);
-  container.style.transform = 'scale(' + scale + ')';
-}
-
-function resetZoom() {
-  var container = document.querySelector('.container');
-  container.style.transform = 'scale(1)';
-}
