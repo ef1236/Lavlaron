@@ -35,6 +35,24 @@
             }
         };
       </script>
+
+    <!-- Matomo -->
+    <script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+        var u="https://lavlarontool.matomo.cloud/";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='//cdn.matomo.cloud/lavlarontool.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+    <!-- End Matomo Code -->
+    
+
 </head>
 <body>
     <div class="container">
@@ -204,13 +222,13 @@
         </div>
 
         <br>
-        <div class="">
+        <div class="" style="font-size: 13px;">
             <div id="missing0" style="text-align: right; font-size: large;"><u><b>:פרטים חסרים</b></u></div>
             <div id="missing1" style="text-align: right;">איזו פעילות-</div>
             <div id="missing2" style="text-align: right;">מקום הפעילות-</div>
             <div id="missing3" style="text-align: right;">סוג הפעילות-</div>
-            <div id="missing4" style="text-align: right;">הנהגה-</div>
-            <div id="missing5" style="text-align: right;">שבט-</div>
+            <div id="missing4" style="text-align: right;">*הנהגה-</div>
+            <div id="missing5" style="text-align: right;">*שבט-</div>
             <div id="missing6" style="text-align: right;">מתאריך-</div>
             <div id="missing7" style="text-align: right;">עד תאריך-</div>
             <div id="missing8" style="text-align: right;">שם משפחה-</div>
@@ -229,6 +247,7 @@
             <div id="missing21" style="text-align: right;">טלפון נייד-</div>
             <div id="missing22" style="text-align: right;">חתימת ההורה-</div>
             <div id="missingdone" style="text-align: right; display: none;">  אין פרטים חסרים! נא לרדת למטה ולקחת צילום מסך של האישור </div>
+            <div id="missing21" style="text-align: right;"> ממולא באופן אוטומטי* </div>
 
 
 
